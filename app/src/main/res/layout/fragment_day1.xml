@@ -65,7 +65,7 @@
                         android:layout_height="150dp"
                         android:layout_below="@id/day_time1"
                         android:padding="10dp"
-                        android:src="@drawable/forecast_sun" />
+                        android:src="" />
 
                     <TextView
                         android:id="@+id/city_temp1_value"

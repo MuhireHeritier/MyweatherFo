@@ -93,11 +93,8 @@ public class WeatherDataParserHandler  {
                 }
             }
         });
+        // Start the thread
         thread.start();
-
-
-
-
     }
 
     protected void parseXML(XmlPullParser parser){
@@ -132,7 +129,10 @@ public class WeatherDataParserHandler  {
                                     String [] titleText = title.split(",");
                                     cityWeatherElementsObj.setForecast(titleText[0]);
                                 }
-
+                                break;
+                            case "url":
+                                String imageIcon = text;
+                                Log.d(TAG, "parseXML: " +imageIcon);
                                 break;
                             case "description":
                                 break;
@@ -140,6 +140,7 @@ public class WeatherDataParserHandler  {
                                 break;
                             case "item":
                                 cityWeatherElementsObj.setCityName(loc);
+                                cityWeatherElementsObj.setWeatherImage(imageIcon);
                                 if (cityWeatherElementsList != null){
                                     cityWeatherElementsList.add(cityWeatherElementsObj);
                                 }

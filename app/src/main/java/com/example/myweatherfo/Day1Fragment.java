@@ -24,7 +24,7 @@ import java.util.List;
  */
 public class Day1Fragment extends Fragment {
 
-    final static String urlAddress = "https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/";
+    final static String urlAddress = "https://weather-broker-cdn.api.bbci.co.uk/en/forecastRain/rss/3day/";
     final static String locationIdGlasgow = "2648579";
     final static String locationIdLondon = "2643743";
     final static String locationIdNewYork = "5128581";
@@ -33,7 +33,7 @@ public class Day1Fragment extends Fragment {
     final static String locationIdBangladesh = "1185241";
     final static String locationIdKigali = "202061";
 
-    private TextView cityName,temperature, forecast, wind, humidity, pressure, uvRisk, chance_of_rain;
+    private TextView cityName,temperature, weatherIcon, forecastRain, wind, humidity, pressure, uvRisk, chance_of_rain;
 
     private View view;
     private List data;
@@ -58,15 +58,17 @@ public class Day1Fragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_day1, container, false);
         cityName = (TextView) view.findViewById(R.id.city_name1);
         temperature = (TextView)view.findViewById(R.id.city_temp1_value);
-        forecast = view.findViewById(R.id.city_forecast1_text);
+        forecastRain = view.findViewById(R.id.city_forecast1_text);
         wind = (TextView) view.findViewById(R.id.idToday_wind_value1);
         humidity = (TextView)view.findViewById(R.id.idToday_humidity_value);
         pressure = (TextView) view.findViewById(R.id.idToday_pressure_value1);
         uvRisk = view.findViewById(R.id.idToday_uvRisk_value1);
         chance_of_rain = view.findViewById(R.id.idToday_rain_value1);
+        weatherIcon = view.findViewById(R.id.weather_icon1);
 
         cityName.setText(element.getCityName());
-        forecast.setText(element.getForecast());
+        forecastRain.setText(element.getForecast());
+        weatherIcon.setText(element.getWeatherImage());
 
         return view;
     }
