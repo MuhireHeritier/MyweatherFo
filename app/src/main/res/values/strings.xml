@@ -3,12 +3,6 @@
     <string name="title_activity_menu_main2">MenuMain2Activity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
-    <string name="location_1">Kigali</string>
-    <string name="location_2">Glasgow</string>
-    <string name="location_3">Port-Luis</string>
-    <string name="location_4">Dhaka</string>
-    <string name="location_5">London</string>
-    <string name="location_6">New York</string>
     <string name="locationIdGlasgow">2648579</string>
     <string name="locationIdLondon">2643743</string>
     <string name="locationIdNewYork">5128581</string>
