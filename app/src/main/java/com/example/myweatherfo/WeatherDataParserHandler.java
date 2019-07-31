@@ -130,17 +130,18 @@ public class WeatherDataParserHandler  {
                                     cityWeatherElementsObj.setForecast(titleText[0]);
                                 }
                                 break;
-                            case "url":
+                            /*case "url":
+                                // Get the gif dynamically and display of link for it conveninetlly.
                                 String imageIcon = text;
                                 Log.d(TAG, "parseXML: " +imageIcon);
-                                break;
+                                break;*/
                             case "description":
                                 break;
                             case "pubDate":
                                 break;
                             case "item":
                                 cityWeatherElementsObj.setCityName(loc);
-                                cityWeatherElementsObj.setWeatherImage(imageIcon);
+                                // cityWeatherElementsObj.setWeatherImage(imageIcon);
                                 if (cityWeatherElementsList != null){
                                     cityWeatherElementsList.add(cityWeatherElementsObj);
                                 }
@@ -150,39 +151,10 @@ public class WeatherDataParserHandler  {
 
 
                         }
-//                        if (tagName.equalsIgnoreCase("item")){
-//
-//                            cityWeatherElementsList.add(cityWeatherElementsObj);
-//                        }
-//                        else if (tagName.equalsIgnoreCase("title")){
-////                            if (insideItem) {
-//                                // Splitting a string based on commas
-//                                String title = text;
-//                                String [] titleText = title.split(",");
-////                                cityWeatherElementsObj.setCityName(titleText[0]);
-//                                cityWeatherElementsObj.setForecast(titleText[0]);
-//
-//
-//                                Log.d(TAG, "parseXML: "+ text);
-////                            }
-//                        }
-//                        else if (tagName.equalsIgnoreCase("description")){
-////                            if (insideItem) {
-//
-//                                //cityWeatherElementsObj.setCityName(text);
-//                                Log.d(TAG, "parseXML: "+ text);
-////                            }
-//                        }
 
                         /*else if (event == XmlPullParser.END_TAG && tagName.equalsIgnoreCase("item")){
                             insideItem = false;
                         }*/
-
-
-//                        break;
-//
-//                    default:
-//                        break;
 
                 }
 

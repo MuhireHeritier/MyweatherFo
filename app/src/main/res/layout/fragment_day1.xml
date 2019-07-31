@@ -59,13 +59,20 @@
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
-                    <ImageView
+                    <TextView
+                        android:id="@+id/weather_icon1"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_below="@id/day_time1"
+                        android:text=""/>
+
+                    <!--<ImageView
                         android:id="@+id/weather_icon1"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:layout_below="@id/day_time1"
                         android:padding="10dp"
-                        android:src="" />
+                        android:src="" />-->
 
                     <TextView
                         android:id="@+id/city_temp1_value"

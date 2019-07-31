@@ -13,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -68,7 +69,7 @@ public class Day1Fragment extends Fragment {
 
         cityName.setText(element.getCityName());
         forecastRain.setText(element.getForecast());
-        weatherIcon.setText(element.getWeatherImage());
+        // weatherIcon.setText(element.getWeatherImage());
 
         return view;
     }
