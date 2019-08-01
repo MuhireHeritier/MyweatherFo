@@ -30,32 +30,32 @@ public class MainActivity extends AppCompatActivity implements RecyclerviewWeath
         // add items for the the cityDataList
         cityDataList.add(new LocationWeather(
                 "Kigali",
-                R.drawable.weather,
+                R.drawable.kgl1,
                 20
         ));
         cityDataList.add(new LocationWeather(
                 "London",
-                R.drawable.mostlycloudy,
+                R.drawable.lon1,
                 30
         ));
         cityDataList.add(new LocationWeather(
                 "Dhaka",
-                R.drawable.mostlycloudy,
+                R.drawable.dha,
                 23
         ));
         cityDataList.add(new LocationWeather(
                 "New York",
-                R.drawable.mostlycloudy,
+                R.drawable.nyc1,
                 32
         ));
         cityDataList.add(new LocationWeather(
                 "Glasgow",
-                R.drawable.mostlycloudy,
+                R.drawable.gla,
                 25
         ));
         cityDataList.add(new LocationWeather(
                 "Oman",
-                R.drawable.mostlycloudy,
+                R.drawable.oman12,
                 22
         ));
         cityDataList.add(new LocationWeather(
