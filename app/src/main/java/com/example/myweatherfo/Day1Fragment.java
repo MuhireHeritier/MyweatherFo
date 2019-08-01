@@ -34,7 +34,9 @@ public class Day1Fragment extends Fragment {
     final static String locationIdBangladesh = "1185241";
     final static String locationIdKigali = "202061";
 
-    private TextView cityName,temperature, weatherIcon, forecastRain, wind, humidity, pressure, uvRisk, chance_of_rain;
+
+
+    private TextView cityName,temperature, weatherIcon, forecastRain, windSpeed, humidity, pressure, uvRisk, chance_of_rain;
 
     private View view;
     private List data;
@@ -60,7 +62,7 @@ public class Day1Fragment extends Fragment {
         cityName = (TextView) view.findViewById(R.id.city_name1);
         temperature = (TextView)view.findViewById(R.id.city_temp1_value);
         forecastRain = view.findViewById(R.id.city_forecast1_text);
-        wind = (TextView) view.findViewById(R.id.idToday_wind_value1);
+        windSpeed = (TextView) view.findViewById(R.id.idToday_wind_value1);
         humidity = (TextView)view.findViewById(R.id.idToday_humidity_value);
         pressure = (TextView) view.findViewById(R.id.idToday_pressure_value1);
         uvRisk = view.findViewById(R.id.idToday_uvRisk_value1);
@@ -69,7 +71,8 @@ public class Day1Fragment extends Fragment {
 
         cityName.setText(element.getCityName());
         forecastRain.setText(element.getForecast());
-        // weatherIcon.setText(element.getWeatherImage());
+        temperature.setText(element.getTemperature());
+        windSpeed.setText(element.getWindSpeed());
 
         return view;
     }

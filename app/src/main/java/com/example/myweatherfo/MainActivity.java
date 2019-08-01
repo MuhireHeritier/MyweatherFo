@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerviewWeath
                 "Dhaka",
                 R.drawable.dha,
                 23
+
+
+
         ));
         cityDataList.add(new LocationWeather(
                 "New York",
@@ -110,22 +113,5 @@ public class MainActivity extends AppCompatActivity implements RecyclerviewWeath
 
 
         }
-//        if(position == 0){
-//            Intent myIntent = new Intent(this, City1MainActivity.class);
-//            startActivity(myIntent);
-//        }else if(position == 1){
-//            Intent myIntent = new Intent(this, City2MainActivity.class);
-//            startActivity(myIntent);
-//
-//        }
-//        else if(position == 2){
-//            Intent myIntent3 = new Intent(this, UpdatedMenuActivity.class);
-//            startActivity(myIntent3);
-//
-//        }
-//        else {
-//            Intent myIntent3 = new Intent(this, City1MainActivity.class);
-//            startActivity(myIntent3);
-//        }
     }
 }

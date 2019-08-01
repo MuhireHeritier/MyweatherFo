@@ -8,6 +8,7 @@ public class CityWeatherElements {
     private String cityName;
     private String weatherImage;
     private String date;
+    private String windSpeed;
 
     private String forecast;
     private String humidity;
@@ -71,6 +72,14 @@ public class CityWeatherElements {
 
     public void setTemperature(String temperature) {
         this.temperature = temperature;
+    }
+
+    public String getWindSpeed() {
+        return windSpeed;
+    }
+
+    public void setWindSpeed(String windSpeed) {
+        this.windSpeed = windSpeed;
     }
 
     public String getVisibility() {

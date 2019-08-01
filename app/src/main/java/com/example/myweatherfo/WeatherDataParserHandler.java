@@ -104,6 +104,7 @@ public class WeatherDataParserHandler  {
             boolean insideItem = false;
             String loc ="";
             String [] locTitle = null;
+            String [] max = null;
 
             while (event != XmlPullParser.END_DOCUMENT){
                 String tagName = xpParser.getName();
@@ -123,9 +124,7 @@ public class WeatherDataParserHandler  {
                             case "title":
                                 if (loc.isEmpty()){
                                     loc = text;
-                                    locTitle = loc.split(" ",6);
-                                    Log.d(TAG, "the title after split: " + locTitle[5]);
-                                    Log.d(TAG, "Check Location changed: "+ loc);
+                                    locTitle = loc.split("for");
                                 }
                                 if (insideItem) {
                                     String title = text;
@@ -139,12 +138,22 @@ public class WeatherDataParserHandler  {
                                 Log.d(TAG, "parseXML: " +imageIcon);
                                 break;*/
                             case "description":
+                                if (insideItem) {
+                                    String description = text;
+                                    String[] descriptionElts = description.split(",");
+                                    Log.d(TAG, "parseXML: " + descriptionElts[0]);
+                                    max = descriptionElts[0].split(" ", 3);
+                                    cityWeatherElementsObj.setTemperature(max[2]);
+                                    String wind = descriptionElts[3].split(":")[1];
+                                    Log.d(TAG, "parseXML: "+ wind);
+                                    cityWeatherElementsObj.setWindSpeed(wind);
+                                }
+
                                 break;
                             case "pubDate":
                                 break;
                             case "item":
-                                cityWeatherElementsObj.setCityName(locTitle[5]);
-                                // cityWeatherElementsObj.setWeatherImage(imageIcon);
+                                cityWeatherElementsObj.setCityName(locTitle[1]);
                                 if (cityWeatherElementsList != null){
                                     cityWeatherElementsList.add(cityWeatherElementsObj);
                                 }

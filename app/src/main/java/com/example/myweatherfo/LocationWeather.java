@@ -6,11 +6,15 @@ public class LocationWeather {
     private String cityName;
     private int cityTemperature;
     private int cityImage;
+    private String cityId;
+
+    String [] locationId = {"2648579","2643743","5128581","287286","934154","1185241","202061"};
 
     public LocationWeather(String cityName, int cityImage, int cityTemperature) {
         this.cityName = cityName;
         this.cityImage = cityImage;
         this.cityTemperature = cityTemperature;
+        this.cityId = cityId;
     }
 
     public String getCityName() {
