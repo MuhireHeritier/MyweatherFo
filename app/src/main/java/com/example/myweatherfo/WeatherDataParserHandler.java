@@ -103,6 +103,7 @@ public class WeatherDataParserHandler  {
             int event = parser.getEventType();
             boolean insideItem = false;
             String loc ="";
+            String [] locTitle = null;
 
             while (event != XmlPullParser.END_DOCUMENT){
                 String tagName = xpParser.getName();
@@ -122,6 +123,8 @@ public class WeatherDataParserHandler  {
                             case "title":
                                 if (loc.isEmpty()){
                                     loc = text;
+                                    locTitle = loc.split(" ",6);
+                                    Log.d(TAG, "the title after split: " + locTitle[5]);
                                     Log.d(TAG, "Check Location changed: "+ loc);
                                 }
                                 if (insideItem) {
@@ -131,7 +134,7 @@ public class WeatherDataParserHandler  {
                                 }
                                 break;
                             /*case "url":
-                                // Get the gif dynamically and display of link for it conveninetlly.
+                                // Get the gif dynamically and display of link for it convenientlly.
                                 String imageIcon = text;
                                 Log.d(TAG, "parseXML: " +imageIcon);
                                 break;*/
@@ -140,7 +143,7 @@ public class WeatherDataParserHandler  {
                             case "pubDate":
                                 break;
                             case "item":
-                                cityWeatherElementsObj.setCityName(loc);
+                                cityWeatherElementsObj.setCityName(locTitle[5]);
                                 // cityWeatherElementsObj.setWeatherImage(imageIcon);
                                 if (cityWeatherElementsList != null){
                                     cityWeatherElementsList.add(cityWeatherElementsObj);

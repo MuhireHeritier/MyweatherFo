@@ -34,8 +34,9 @@ public class Another2Menu extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString("params", "My String data");
         // set MyFragment Arguments
-        Day1Fragment myObj = new Day1Fragment();
-        myObj.setArguments(bundle);
+        Day1Fragment fragment = new Day1Fragment();
+        fragment.setArguments(bundle);
+
 
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(getResources().getString(R.string.app_name));
