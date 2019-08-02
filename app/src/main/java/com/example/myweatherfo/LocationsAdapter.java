@@ -62,12 +62,12 @@ class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder>
      */
     @Override
     public void onBindViewHolder(LocationsAdapter.ViewHolder holder, int position) {
-        //Get current sport
-        Location currentSport = mLocationsData.get(position);
+        //Get current location
+        Location currentLocation = mLocationsData.get(position);
         //Populate the textviews with data
-        holder.bindTo(currentSport);
+        holder.bindTo(currentLocation);
 
-        Glide.with(mContext).load(currentSport.getImageResource()).into(holder.mLocationsImage);
+        Glide.with(mContext).load(currentLocation.getImageResource()).into(holder.mLocationsImage);
     }
 
 
@@ -110,7 +110,6 @@ class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder>
         void bindTo(Location currentLocation){
             //Populate the textviews with data
             mCityNameText.setText(currentLocation.getCityName());
-//            mInfoText.setText(currentLocation.getInfo());
 
         }
 

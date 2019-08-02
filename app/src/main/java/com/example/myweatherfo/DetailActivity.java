@@ -101,11 +101,6 @@ public class DetailActivity extends AppCompatActivity {
 
 
 //    public void callBackData(String[] result) {
-//        temperature.setText((Float.parseFloat(result[2]) - 273) + " degree Celcius" );
-//        humidity.setText(result[0] + " %");
-//        pressure.setText(result[1] + " hPa");
-//        country.setText(result[4]);
-//        location.setText(result[3]);
 //        return;
 //
 //    }

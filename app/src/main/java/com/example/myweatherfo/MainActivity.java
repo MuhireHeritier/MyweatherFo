@@ -1,5 +1,7 @@
-// Names : Heritier Muhire
-// Student Id: S1719021
+/**
+ * Names : Heritier Muhire
+ * Student Id: S1719021
+ */
 package com.example.myweatherfo;
 
 import android.content.res.TypedArray;
@@ -60,12 +62,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Method for initializing the sports data from resources.
+     * Method for initializing the locations data from resources in string.xml.
      */
     private void initializeData() {
         //Get the resources from the XML file
-        String[] sportsList = getResources().getStringArray(R.array.locations_titles);
-//        String[] sportsInfo = getResources().getStringArray(R.array.locations_info);
+        String[] locationsList = getResources().getStringArray(R.array.locations_titles);
 
         TypedArray locationsImageResources =
                 getResources().obtainTypedArray(R.array.locations_images);
@@ -73,13 +74,13 @@ public class MainActivity extends AppCompatActivity {
         //Clear the existing data (to avoid duplication)
         mLocationsData.clear();
 
-        //Create the ArrayList of Sports objects with the titles and information about each sport
-        for(int i=0;i<sportsList.length;i++){
-            mLocationsData.add(new Location(sportsList[i],
+        //Create the ArrayList of Locations objects with the cityNames about each location
+        for(int i=0;i<locationsList.length;i++){
+            mLocationsData.add(new Location(locationsList[i],
                     locationsImageResources.getResourceId(i,0)));
         }
 
-        // HIGHLY DOUBT : clean up the data in the typed Array
+        //clean up the data in the Typed Array
         locationsImageResources.recycle();
 
         //Notify the adapter of the change
