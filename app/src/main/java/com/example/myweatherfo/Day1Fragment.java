@@ -28,13 +28,6 @@ public class Day1Fragment extends Fragment {
     final static String urlAddress = "https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/";
     final static String locationIdGlasgow = "2648579";
     final static String locationIdLondon = "2643743";
-    final static String locationIdNewYork = "5128581";
-    final static String locationIdOman = "287286";
-    final static String locationIdMauritius = "934154";
-    final static String locationIdBangladesh = "1185241";
-    final static String locationIdKigali = "202061";
-
-
 
     private TextView cityName,temperature, weatherIcon, forecastRain, windSpeed, humidity, pressure, uvRisk, chance_of_rain;
 

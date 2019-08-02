@@ -88,7 +88,7 @@ class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder>
 
         //Member Variables for the TextViews
         private TextView mCityNameText;
-        //        private TextView mInfoText;
+        //private TextView mInfoText;
         private ImageView mLocationsImage;
 
         /**
@@ -100,7 +100,6 @@ class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder>
 
             //Initialize the views
             mCityNameText = (TextView)itemView.findViewById(R.id.title);
-//            mInfoText = (TextView)itemView.findViewById(R.id.subTitle);
 
             mLocationsImage = (ImageView) itemView.findViewById(R.id.locationsImage);
 
