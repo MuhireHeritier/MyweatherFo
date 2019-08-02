@@ -36,6 +36,11 @@ public class DetailActivity extends AppCompatActivity {
 
         hp.put("Glasgow", "2648579");
         hp.put("London", "2643743");
+        hp.put("Kigali","202061");
+        hp.put("New York","5128581");
+        hp.put("Bangladesh","1185241");
+        hp.put("Oman","287286");
+        hp.put("Mauritius","934154");
 
 
         toolbar = findViewById(R.id.toolbar);
