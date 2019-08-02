@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -28,6 +29,10 @@ public class Day1Fragment extends Fragment {
     final static String urlAddress = "https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/";
     final static String locationIdGlasgow = "2648579";
     final static String locationIdLondon = "2643743";
+    DetailActivity detailActivity = new DetailActivity();
+    String code;
+
+    HashMap <String, String> hp = new HashMap<>();
 
     private TextView cityName,temperature, weatherIcon, forecastRain, windSpeed, humidity, pressure, uvRisk, chance_of_rain;
 
@@ -39,13 +44,19 @@ public class Day1Fragment extends Fragment {
     public Day1Fragment() {
         // Required empty public constructor
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         setHasOptionsMenu(true);
 
+        DetailActivity activity = (DetailActivity) getActivity();
+        code = activity.locationCode;
+
+        System.out.println(code);
+
         //load data
-        loadRSSParser(urlAddress,locationIdGlasgow);
+        loadRSSParser(urlAddress,code);
 
         //set element 1 as day 1 object
         element = (CityWeatherElements)data.get(0);

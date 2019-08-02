@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 public class DetailActivity extends AppCompatActivity {
 
 
@@ -22,18 +24,18 @@ public class DetailActivity extends AppCompatActivity {
     ViewPagerAdapter pageAdapter;
     TabItem tabDay3;
     ViewPager viewPager;
+    String location;
+    String locationCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        // Pass data from activity to fragment
-        Bundle bundle = new Bundle();
-        bundle.putString("params", "My String data");
-        // set MyFragment Arguments
-        Day1Fragment fragment = new Day1Fragment();
-        fragment.setArguments(bundle);
+        HashMap<String, String> hp = new HashMap<>();
+
+        hp.put("Glasgow", "2648579");
+        hp.put("London", "2643743");
 
 
         toolbar = findViewById(R.id.toolbar);
@@ -46,13 +48,15 @@ public class DetailActivity extends AppCompatActivity {
 
         TextView locationTitle = (TextView)findViewById(R.id.cityTitleDetail);
         locationTitle.setText(getIntent().getStringExtra("title"));
+        location = locationTitle.getText().toString();
+        locationCode=hp.get(location);
+
         viewPager = findViewById(R.id.viewPager_id);
 
         pageAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         pageAdapter.addFragment(new Day1Fragment(),"Day 1");
         pageAdapter.addFragment(new Day2Fragment(),"Day 2");
         pageAdapter.addFragment(new Day3Fragment(),"Day 3");
-
 
 
 //        pageAdapter = new ViewPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
