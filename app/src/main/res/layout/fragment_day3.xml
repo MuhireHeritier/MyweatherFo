@@ -40,21 +40,12 @@
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/id_country1d3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/city_name1d3"
-                        android:layout_centerHorizontal="true"
-                        android:text="Rwanda"
-                        android:textColor="#000000"
-                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/day_time1d3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/id_country1d3"
+                        android:layout_below="@id/city_name1d3"
                         android:text="Today 07.09.19 3PM"
                         android:textColor="#000000"
                         android:textSize="16sp" />

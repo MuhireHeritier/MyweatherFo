@@ -54,7 +54,7 @@ public class DetailActivity extends AppCompatActivity {
         TextView locationTitle = (TextView)findViewById(R.id.cityTitleDetail);
         locationTitle.setText(getIntent().getStringExtra("title"));
         location = locationTitle.getText().toString();
-        locationCode=hp.get(location);
+        locationCode = hp.get(location);
 
         viewPager = findViewById(R.id.viewPager_id);
 
