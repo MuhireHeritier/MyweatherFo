@@ -2,116 +2,87 @@
 // Student Id: S1719021
 package com.example.myweatherfo;
 
-import android.content.Intent;
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements RecyclerviewWeatherAdapter.MyViewHolder.OnCityWeatherItemClickListener {
+public class MainActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    RecyclerviewWeatherAdapter adapter;
-    List<LocationWeather> cityDataList;
+    //Member variables
+    private RecyclerView mRecyclerView;
+    private ArrayList<Location> mLocationsData;
+    private LocationsAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cityDataList = new ArrayList<>();
-        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //Initialize the RecyclerView
+        mRecyclerView = (RecyclerView)findViewById(R.id.recyclerView);
 
-        // add items for the the cityDataList
-        cityDataList.add(new LocationWeather(
-                "Kigali",
-                R.drawable.kgl1,
-                20
-        ));
-        cityDataList.add(new LocationWeather(
-                "London",
-                R.drawable.lon1,
-                30
-        ));
-        cityDataList.add(new LocationWeather(
-                "Dhaka",
-                R.drawable.dha,
-                23
+        //Set the Layout Manager
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        //Initialize the ArrayLIst that will contain the data
+        mLocationsData = new ArrayList<>();
 
+        //Initialize the adapter and set it ot the RecyclerView
+        mAdapter = new LocationsAdapter(this, mLocationsData);
+        mRecyclerView.setAdapter(mAdapter);
 
-        ));
-        cityDataList.add(new LocationWeather(
-                "New York",
-                R.drawable.nyc1,
-                32
-        ));
-        cityDataList.add(new LocationWeather(
-                "Glasgow",
-                R.drawable.gla,
-                25
-        ));
-        cityDataList.add(new LocationWeather(
-                "Oman",
-                R.drawable.oman12,
-                22
-        ));
-        cityDataList.add(new LocationWeather(
-                "Port-Luis",
-                R.drawable.mur,
-                21
-        ));
+        // FOR SWIPING
+        /*ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper
+                .SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
 
-        adapter = new RecyclerviewWeatherAdapter(this, cityDataList, this);
-        recyclerView.setAdapter(adapter);
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                mLocationsData.remove(viewHolder.getAdapterPosition());
+                mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
 
+            }
+        });
+
+        helper.attachToRecyclerView(mRecyclerView);
+
+*/
+
+        //Get the data
+        initializeData();
     }
 
-    @Override
-    public void onItemClick(int position) {
+    /**
+     * Method for initializing the sports data from resources.
+     */
+    private void initializeData() {
+        //Get the resources from the XML file
+        String[] sportsList = getResources().getStringArray(R.array.locations_titles);
+//        String[] sportsInfo = getResources().getStringArray(R.array.locations_info);
 
-        switch(position){
-            case 0:
-                Intent myIntent = new Intent(this, Another2Menu.class);
-                startActivity(myIntent);
-                break;
+        TypedArray locationsImageResources =
+                getResources().obtainTypedArray(R.array.locations_images);
 
-            case 1:
-                Intent myIntent1 = new Intent(this, Another2Menu.class);
-                startActivity(myIntent1);
-                break;
+        //Clear the existing data (to avoid duplication)
+        mLocationsData.clear();
 
-            case 2:
-                Intent myIntent2 = new Intent(this, Another2Menu.class);
-                startActivity(myIntent2);
-                break;
-
-            case 3:
-                Intent myIntent3 = new Intent(this, Another2Menu.class);
-                startActivity(myIntent3);
-                break;
-
-            case 4:
-                Intent myIntent4 = new Intent(this, Another2Menu.class);
-                startActivity(myIntent4);
-                break;
-
-            case 5:
-                Intent myIntent5 = new Intent(this, Another2Menu.class);
-                startActivity(myIntent5);
-                break;
-
-            case 6:
-                Intent myIntent6 = new Intent(this, Another2Menu.class);
-                startActivity(myIntent6);
-                break;
-
-
+        //Create the ArrayList of Sports objects with the titles and information about each sport
+        for(int i=0;i<sportsList.length;i++){
+            mLocationsData.add(new Location(sportsList[i],
+                    locationsImageResources.getResourceId(i,0)));
         }
+
+        // HIGHLY DOUBT : clean up the data in the typed Array
+        locationsImageResources.recycle();
+
+        //Notify the adapter of the change
+        mAdapter.notifyDataSetChanged();
     }
 }

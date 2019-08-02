@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/locationsImage"
+            android:adjustViewBounds="true"/>
+
+        <!-- FOR TESTING PUrpose-->
+        <!--<ImageView
+            android:id="@+id/city_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"/>-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:text="@string/title_placeholder"
+            android:padding="5dp"
+            android:layout_alignBottom="@id/locationsImage"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            style="@style/TextAppearance.AppCompat.Headline"/>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -4,17 +4,15 @@
  */
 package com.example.myweatherfo;
 
-import android.os.Build;
 import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
-public class Another2Menu extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity {
 
 
     Toolbar toolbar;
@@ -28,7 +26,7 @@ public class Another2Menu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_another2_menu);
+        setContentView(R.layout.activity_detail);
 
         // Pass data from activity to fragment
         Bundle bundle = new Bundle();
@@ -45,6 +43,9 @@ public class Another2Menu extends AppCompatActivity {
         tabDay1 = findViewById(R.id.tabDay1);
         tabDay2 = findViewById(R.id.tabDay2);
         tabDay3 = findViewById(R.id.tabDay3);
+
+        TextView locationTitle = (TextView)findViewById(R.id.cityTitleDetail);
+        locationTitle.setText(getIntent().getStringExtra("title"));
         viewPager = findViewById(R.id.viewPager_id);
 
         pageAdapter = new ViewPagerAdapter(getSupportFragmentManager());
@@ -68,17 +69,17 @@ public class Another2Menu extends AppCompatActivity {
 //
 //                if (tab.getPosition() == 1) {
 //                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//                        getWindow().setStatusBarColor(ContextCompat.getColor(Another2Menu.this,
+//                        getWindow().setStatusBarColor(ContextCompat.getColor(DetailActivity.this,
 //                                R.color.colorAccent));
 //                    }
 //                } else if (tab.getPosition() == 2) {
 //                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//                        getWindow().setStatusBarColor(ContextCompat.getColor(Another2Menu.this,
+//                        getWindow().setStatusBarColor(ContextCompat.getColor(DetailActivity.this,
 //                                android.R.color.darker_gray));
 //                    }
 //                } else {
 //                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//                        getWindow().setStatusBarColor(ContextCompat.getColor(Another2Menu.this,
+//                        getWindow().setStatusBarColor(ContextCompat.getColor(DetailActivity.this,
 //                                R.color.colorPrimaryDark));
 //                    }
 //                }

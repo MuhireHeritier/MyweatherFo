@@ -6,7 +6,6 @@ package com.example.myweatherfo;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.os.AsyncTask;
 import android.util.Log;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -16,7 +15,6 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +24,7 @@ import static android.support.constraint.Constraints.TAG;
 public class WeatherDataParserHandler  {
 
     private ProgressDialog pd;
-    private Another2Menu activity;
+    private DetailActivity activity;
     private Context context;
     private InputStream inputStream;
     private Exception exception = null;

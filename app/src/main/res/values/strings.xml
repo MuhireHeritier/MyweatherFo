@@ -1,15 +1,54 @@
 <resources>
     <string name="app_name">My WeatherFo</string>
+
     <string name="title_activity_menu_main2">MenuMain2Activity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
-    <string name="locationIdGlasgow">2648579</string>
-    <string name="locationIdLondon">2643743</string>
-    <string name="locationIdNewYork">5128581</string>
-    <string name="locationIdOman">287286</string>
-    <string name="locationIdMauritius">934154</string>
-    <string name="locationIdBangladesh">1185241</string>
-    <string name="locationIdKigali">202061</string>
+    <string name="tab_text_3">Tab 3</string>
+
+    <string name="title_placeholder">Title</string>
+    <string name="news_placeholder">News</string>
+    <string name="sports_info_placeholder">Here is some news</string>
+
+    <string-array name="locations_titles">
+        <item>Kigali</item>
+        <item>Glasgow</item>
+        <item>London</item>
+        <item>New York</item>
+        <item>Oman</item>
+        <item>Dhaka</item>
+        <item>Port Luis</item>
+    </string-array>
+
+    <string-array name="locations_ids">
+        <item>202061</item>
+        <item>2648579</item>
+        <item>2643743</item>
+        <item>5128581</item>
+        <item>287286</item>
+        <item>1185241</item>
+        <item>934154</item>
+    </string-array>
+
+    <array name="locations_images">
+        <item>@drawable/kgl1</item>
+        <item>@drawable/gla</item>
+        <item>@drawable/lon1</item>
+        <item>@drawable/nyc1</item>
+        <item>@drawable/oman12</item>
+        <item>@drawable/dha</item>
+        <item>@drawable/mur</item>
+    </array>
+
+    <string-array name="locations_info">
+        <item>Here is Kigali Weather!</item>
+        <item>Here is Glasgow Weather!</item>
+        <item>Here is London Weather!</item>
+        <item>Here is New York Weather!</item>
+        <item>Here is Oman FOllo!</item>
+        <item>Here is Dhaka weather!</item>
+        <item>Here is Port Luis weather!</item>
+    </string-array>
 
 
     <!-- TODO: Remove or change this placeholder text -->
