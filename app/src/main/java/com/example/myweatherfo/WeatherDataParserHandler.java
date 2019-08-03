@@ -141,10 +141,9 @@ public class WeatherDataParserHandler {
                                 if (insideItem) {
                                     String description = text;
                                     System.out.println(text);
+                                    String[] descriptionElts = description.split(",");
                                     if (description.contains("Maximum Temperature:")) {
-
-                                        String[] descriptionElts = description.split(",");
-                                        Log.d(TAG, "parseXML: " + descriptionElts[0]);
+                                        System.out.println("------------------------------------ "+ descriptionElts);
                                         maxTemp = descriptionElts[0].split(" ", 4)[2];
                                         System.out.println("Maxium " + maxTemp);
                                         cityWeatherElementsObj.setTemperature(maxTemp);
@@ -171,11 +170,45 @@ public class WeatherDataParserHandler {
                                         String sunsetTime = descriptionElts[10].split(":", 2)[1];
                                         cityWeatherElementsObj.setSunset(sunsetTime);
 
+                                    }
+                                    else  {
+                                        maxTemp = descriptionElts[0].split(" ", 4)[2];
+                                        cityWeatherElementsObj.setTemperature(maxTemp);
+                                        String windDir = descriptionElts[1].split(":")[1];
+                                        cityWeatherElementsObj.setWindDirection(windDir);
+                                        String windSpeed = descriptionElts[2].split(":")[1];
+                                        cityWeatherElementsObj.setWindSpeed(windSpeed);
+                                        String visibility = descriptionElts[3].split(":")[1];
+                                        cityWeatherElementsObj.setVisibility(visibility);
+
+                                        String pressure = descriptionElts[4].split(":")[1];
+                                        cityWeatherElementsObj.setPressure(pressure);
+
+                                        String humidity = descriptionElts[5].split(":")[1];
+                                        cityWeatherElementsObj.setHumidity(humidity);
+
+                                        String uvRisk = descriptionElts[6].split(":")[1];
+                                        cityWeatherElementsObj.setUvRisk(uvRisk);
+
+                                        if (description.contains("sunrise")){
+                                            String sunriseTime = descriptionElts[8].split(":", 2)[1];
+                                            cityWeatherElementsObj.setSunrise(sunriseTime);
+                                            cityWeatherElementsObj.setSunset("--");
+
+
+                                        }
+                                        else{
+                                            String sunsetTime = descriptionElts[8].split(":", 2)[1];
+                                            cityWeatherElementsObj.setSunset(sunsetTime);
+                                            cityWeatherElementsObj.setSunrise("--");
+                                        }
+
+
 
                                     }
-                                    /*else{
 
-                                    }*/
+
+
 
 
                                 }

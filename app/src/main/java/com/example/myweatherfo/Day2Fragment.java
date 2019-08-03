@@ -80,6 +80,12 @@ public class Day2Fragment extends Fragment {
         windDirection.setText(element.getWindDirection());
         visibility.setText(element.getVisibility());
 
+        pressure.setText(element.getPressure());
+        humidity.setText(element.getHumidity());
+        uvRisk.setText(element.getUvRisk());
+        sunrise.setText(element.getSunrise());
+        sunset.setText(element.getSunset());
+
         return view;
     }
 
