@@ -17,6 +17,8 @@ public class CityWeatherElements {
     private String visibility;
     private String uvRisk;
     private String windDirection;
+    private String sunset;
+    private String sunrise;
 
 
     public String getCityName() {
@@ -104,5 +106,21 @@ public class CityWeatherElements {
 
     public void setWindDirection(String windDirection) {
         this.windDirection = windDirection;
+    }
+
+    public String getSunset() {
+        return sunset;
+    }
+
+    public void setSunset(String sunset) {
+        this.sunset = sunset;
+    }
+
+    public String getSunrise() {
+        return sunrise;
+    }
+
+    public void setSunrise(String sunrise) {
+        this.sunrise = sunrise;
     }
 }

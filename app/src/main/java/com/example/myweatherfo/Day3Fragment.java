@@ -63,14 +63,13 @@ public class Day3Fragment extends Fragment {
         temperature = (TextView)view.findViewById(R.id.city_temp1_valued3);
         forecastRain = view.findViewById(R.id.city_forecast1_textd3);
         windSpeed = (TextView) view.findViewById(R.id.wind_value1d3);
-        windDirection = view.findViewById(R.id.wind_value1d3);
+        windDirection = view.findViewById(R.id.wind_dir_valued3);
         visibility = view.findViewById(R.id.visibility_value1d3);
         sunrise = view.findViewById(R.id.sunrise_value1d3);
         sunset = view.findViewById(R.id.sunset_value1d3);
         humidity = (TextView)view.findViewById(R.id.humidity_valued3);
         pressure = (TextView) view.findViewById(R.id.pressure_value1d3);
         uvRisk = view.findViewById(R.id.idToday_uvRisk_value1d3);
-        weatherIcon = (ImageView)view.findViewById(R.id.weather_icon1d3);
 
         cityName.setText(element.getCityName());
         forecastRain.setText(element.getForecast());

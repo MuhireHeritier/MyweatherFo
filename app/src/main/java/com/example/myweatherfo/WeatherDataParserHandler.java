@@ -21,7 +21,7 @@ import java.util.List;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class WeatherDataParserHandler  {
+public class WeatherDataParserHandler {
 
     private ProgressDialog pd;
     private DetailActivity activity;
@@ -38,7 +38,7 @@ public class WeatherDataParserHandler  {
     private CityWeatherElements cityWeatherElementsObj;
     private List<CityWeatherElements> cityWeatherElementsList = new ArrayList<>();
 
-    public WeatherDataParserHandler(String url){
+    public WeatherDataParserHandler(String url) {
         this.urlString = url;
     }
 
@@ -56,7 +56,7 @@ public class WeatherDataParserHandler  {
 //        pd.show();
 //    }
 
-    public void connector(){
+    public void connector() {
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -84,9 +84,9 @@ public class WeatherDataParserHandler  {
                     inputStream.close();
 
 
-                }catch (IOException e){
+                } catch (IOException e) {
                     exception = e;
-                } catch (XmlPullParserException xex){
+                } catch (XmlPullParserException xex) {
                     exception = xex;
                 }
             }
@@ -95,21 +95,21 @@ public class WeatherDataParserHandler  {
         thread.start();
     }
 
-    protected void parseXML(XmlPullParser parser){
+    protected void parseXML(XmlPullParser parser) {
 
         try {
             int event = parser.getEventType();
             boolean insideItem = false;
-            String loc ="";
-            String [] locTitle = null;
+            String loc = "";
+            String[] locTitle = null;
             String maxTemp = null;
 
 
-            while (event != XmlPullParser.END_DOCUMENT){
+            while (event != XmlPullParser.END_DOCUMENT) {
                 String tagName = xpParser.getName();
-                switch (event){
+                switch (event) {
                     case XmlPullParser.START_TAG:
-                        if (tagName.equalsIgnoreCase("item")){
+                        if (tagName.equalsIgnoreCase("item")) {
                             insideItem = true;
                             cityWeatherElementsObj = new CityWeatherElements();
                         }
@@ -119,37 +119,65 @@ public class WeatherDataParserHandler  {
                         break;
 
                     case XmlPullParser.END_TAG:
-                        switch (tagName){
+                        switch (tagName) {
                             case "title":
-                                if (loc.isEmpty()){
+                                if (loc.isEmpty()) {
                                     loc = text;
                                     locTitle = loc.split("for");
                                 }
                                 if (insideItem) {
                                     String title = text;
-                                    String [] titleText = title.split(",");
+                                    String[] titleText = title.split(",");
                                     cityWeatherElementsObj.setForecast(titleText[0]);
                                 }
                                 break;
                             case "url":
                                 System.out.println(text);
+                                String imURL = text;
+
                                 break;
+
                             case "description":
                                 if (insideItem) {
                                     String description = text;
                                     System.out.println(text);
-                                    String[] descriptionElts = description.split(",");
-                                    Log.d(TAG, "parseXML: " + descriptionElts[0]);
-                                    maxTemp = descriptionElts[0].split(" ", 4)[2];
-                                    System.out.println("Maxium "+ maxTemp);
-                                    cityWeatherElementsObj.setTemperature(maxTemp);
-                                    String windDir = descriptionElts[2].split(":")[1];
-                                    cityWeatherElementsObj.setWindDirection(windDir);
-                                    String wind = descriptionElts[3].split(":")[1];
-                                    Log.d(TAG, "parseXML: "+ wind);
-                                    cityWeatherElementsObj.setWindSpeed(wind);
-                                    String visibility = descriptionElts[4].split(":")[1];
-                                    cityWeatherElementsObj.setVisibility(visibility);
+                                    if (description.contains("Maximum Temperature:")) {
+
+                                        String[] descriptionElts = description.split(",");
+                                        Log.d(TAG, "parseXML: " + descriptionElts[0]);
+                                        maxTemp = descriptionElts[0].split(" ", 4)[2];
+                                        System.out.println("Maxium " + maxTemp);
+                                        cityWeatherElementsObj.setTemperature(maxTemp);
+                                        String windDir = descriptionElts[2].split(":")[1];
+                                        cityWeatherElementsObj.setWindDirection(windDir);
+                                        String wind = descriptionElts[3].split(":")[1];
+                                        Log.d(TAG, "parseXML: " + wind);
+                                        cityWeatherElementsObj.setWindSpeed(wind);
+                                        String visibility = descriptionElts[4].split(":")[1];
+                                        cityWeatherElementsObj.setVisibility(visibility);
+
+                                        String pressure = descriptionElts[5].split(":")[1];
+                                        cityWeatherElementsObj.setPressure(pressure);
+
+                                        String humidity = descriptionElts[6].split(":")[1];
+                                        cityWeatherElementsObj.setHumidity(humidity);
+
+                                        String uvRisk = descriptionElts[7].split(":")[1];
+                                        cityWeatherElementsObj.setUvRisk(uvRisk);
+
+                                        String sunriseTime = descriptionElts[9].split(":", 2)[1];
+                                        cityWeatherElementsObj.setSunrise(sunriseTime);
+
+                                        String sunsetTime = descriptionElts[10].split(":", 2)[1];
+                                        cityWeatherElementsObj.setSunset(sunsetTime);
+
+
+                                    }
+                                    /*else{
+
+                                    }*/
+
+
                                 }
 
                                 break;
@@ -157,12 +185,12 @@ public class WeatherDataParserHandler  {
                                 break;
                             case "item":
                                 cityWeatherElementsObj.setCityName(locTitle[1]);
-                                if (cityWeatherElementsList != null){
+                                if (cityWeatherElementsList != null) {
                                     cityWeatherElementsList.add(cityWeatherElementsObj);
                                 }
                                 break;
-                             default:
-                                 break;
+                            default:
+                                break;
 
 
                         }
@@ -179,15 +207,12 @@ public class WeatherDataParserHandler  {
             }
 
             complete = false;
-        }catch (XmlPullParserException xex){
+        } catch (XmlPullParserException xex) {
             exception = xex;
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             exception = e;
         }
     }
-
-
 
 
 //    @Override

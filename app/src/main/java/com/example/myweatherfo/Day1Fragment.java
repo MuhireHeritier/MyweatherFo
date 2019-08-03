@@ -13,9 +13,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.HashMap;
 import java.util.List;
 
@@ -31,8 +31,7 @@ public class Day1Fragment extends Fragment {
 
     HashMap <String, String> hp = new HashMap<>();
 
-    private TextView cityName,temperature, weatherIcon, forecastRain, windSpeed, windDirection, humidity, visibility, sunrise,sunset, pressure, uvRisk;
-
+    private TextView cityName,temperature, forecastRain, windSpeed, windDirection, humidity, visibility, sunrise,sunset, pressure, uvRisk;
     private View view;
     private List data;
     private CityWeatherElements element;
@@ -72,7 +71,6 @@ public class Day1Fragment extends Fragment {
         humidity = (TextView)view.findViewById(R.id.humidity_value1);
         pressure = (TextView) view.findViewById(R.id.pressure_value1);
         uvRisk = view.findViewById(R.id.uvRisk_value1);
-        weatherIcon = view.findViewById(R.id.weather_icon1);
 
         cityName.setText(element.getCityName());
         forecastRain.setText(element.getForecast());
@@ -80,6 +78,12 @@ public class Day1Fragment extends Fragment {
         windSpeed.setText(element.getWindSpeed());
         windDirection.setText(element.getWindDirection());
         visibility.setText(element.getVisibility());
+
+        pressure.setText(element.getPressure());
+        humidity.setText(element.getHumidity());
+        uvRisk.setText(element.getUvRisk());
+        sunrise.setText(element.getSunrise());
+        sunset.setText(element.getSunset());
 
         return view;
     }
