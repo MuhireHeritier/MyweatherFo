@@ -99,16 +99,16 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/today_humidity1d3"
+                        android:id="@+id/wind_dird3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="HUMIDITY"
+                        android:text="WIND DIRECTION"
                         android:textColor="#000000"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/idToday_humidity_valued3"
+                        android:id="@+id/wind_dir_valued3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
@@ -126,7 +126,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/today_Wind_1d3"
+                        android:id="@+id/wind_1d3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="WIND"
@@ -135,7 +135,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/idToday_wind_value1d3"
+                        android:id="@+id/wind_value1d3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
@@ -172,7 +172,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/today_sunset1d3"
+                        android:id="@+id/sunset1d3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="SUNSET"
@@ -181,7 +181,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/idToday_sunset_value1d3"
+                        android:id="@+id/sunset_value1d3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
@@ -199,7 +199,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/today_sunrise1d3"
+                        android:id="@+id/sunrise1d3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="SUNRISE"
@@ -208,7 +208,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/idToday_sunrise_value1d3"
+                        android:id="@+id/sunrise_value1d3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
@@ -244,7 +244,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/today_pressure1d3"
+                        android:id="@+id/pressure1d3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="PRESSURE"
@@ -253,7 +253,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/idToday_pressure_value1d3"
+                        android:id="@+id/pressure_value1d3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
@@ -316,16 +316,16 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/today_rain1d3"
+                        android:id="@+id/humidity1d3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="CHANCE of RAIN"
+                        android:text="HUMIDITY"
                         android:textColor="#000000"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/idToday_rain_value1d3"
+                        android:id="@+id/humidity_valued3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
@@ -343,7 +343,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/today_visibility1d3"
+                        android:id="@+id/visibility1d3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="VISIBILITY"
@@ -352,7 +352,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/idToday_visibility_value1d3"
+                        android:id="@+id/visibility_value1d3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""

@@ -102,7 +102,8 @@ public class WeatherDataParserHandler  {
             boolean insideItem = false;
             String loc ="";
             String [] locTitle = null;
-            String [] max = null;
+            String maxTemp = null;
+
 
             while (event != XmlPullParser.END_DOCUMENT){
                 String tagName = xpParser.getName();
@@ -130,18 +131,18 @@ public class WeatherDataParserHandler  {
                                     cityWeatherElementsObj.setForecast(titleText[0]);
                                 }
                                 break;
-                            /*case "url":
-                                // Get the gif dynamically and display of link for it convenientlly.
-                                String imageIcon = text;
-                                Log.d(TAG, "parseXML: " +imageIcon);
-                                break;*/
+                            case "url":
+                                System.out.println(text);
+                                break;
                             case "description":
                                 if (insideItem) {
                                     String description = text;
+                                    System.out.println(text);
                                     String[] descriptionElts = description.split(",");
                                     Log.d(TAG, "parseXML: " + descriptionElts[0]);
-                                    max = descriptionElts[0].split(" ", 3);
-                                    cityWeatherElementsObj.setTemperature(max[2]);
+                                    maxTemp = descriptionElts[0].split(" ", 4)[2];
+                                    System.out.println("Maxium "+ maxTemp);
+                                    cityWeatherElementsObj.setTemperature(maxTemp);
                                     String wind = descriptionElts[3].split(":")[1];
                                     Log.d(TAG, "parseXML: "+ wind);
                                     cityWeatherElementsObj.setWindSpeed(wind);

@@ -1,7 +1,6 @@
 package com.example.myweatherfo;
 
 
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -22,7 +21,7 @@ import java.util.List;
  */
 public class Day3Fragment extends Fragment {
 
-    private TextView cityName,temperature, forecastRain, windSpeed, humidity, pressure, uvRisk, chance_of_rain;
+    private TextView cityName,temperature, forecastRain, windSpeed, humidity, pressure, uvRisk;
     private ImageView weatherIcon;
 
     final static String urlAddress = "https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/";
@@ -63,11 +62,10 @@ public class Day3Fragment extends Fragment {
         cityName = (TextView) view.findViewById(R.id.city_name1d3);
         temperature = (TextView)view.findViewById(R.id.city_temp1_valued3);
         forecastRain = view.findViewById(R.id.city_forecast1_textd3);
-        windSpeed = (TextView) view.findViewById(R.id.idToday_wind_value1d3);
-        humidity = (TextView)view.findViewById(R.id.idToday_humidity_valued3);
-        pressure = (TextView) view.findViewById(R.id.idToday_pressure_value1d3);
+        windSpeed = (TextView) view.findViewById(R.id.wind_value1d3);
+        humidity = (TextView)view.findViewById(R.id.humidity_valued3);
+        pressure = (TextView) view.findViewById(R.id.pressure_value1d3);
         uvRisk = view.findViewById(R.id.idToday_uvRisk_value1d3);
-        chance_of_rain = view.findViewById(R.id.idToday_rain_value1d3);
         weatherIcon = (ImageView)view.findViewById(R.id.weather_icon1d3);
 
         cityName.setText(element.getCityName());

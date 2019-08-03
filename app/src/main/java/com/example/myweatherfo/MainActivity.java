@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
      * Method for initializing the locations data from resources in string.xml.
      */
     private void initializeData() {
-        //Get the resources from the XML file
+        //Get the resources from the String XML file
         String[] locationsList = getResources().getStringArray(R.array.locations_titles);
 
         TypedArray locationsImageResources =
@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         locationsImageResources.recycle();
 
         //Notify the adapter of the change
-        mAdapter.notifyDataSetChanged();
+        mAdapter.notifyItemRangeChanged(0, mAdapter.getItemCount());
+//        mAdapter.notifyDataSetChanged();
     }
 }

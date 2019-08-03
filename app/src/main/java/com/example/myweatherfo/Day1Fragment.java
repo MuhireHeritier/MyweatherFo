@@ -13,7 +13,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,7 +31,7 @@ public class Day1Fragment extends Fragment {
 
     HashMap <String, String> hp = new HashMap<>();
 
-    private TextView cityName,temperature, weatherIcon, forecastRain, windSpeed, humidity, pressure, uvRisk, chance_of_rain;
+    private TextView cityName,temperature, weatherIcon, forecastRain, windSpeed, humidity, pressure, uvRisk;
 
     private View view;
     private List data;
@@ -64,11 +63,10 @@ public class Day1Fragment extends Fragment {
         cityName = (TextView) view.findViewById(R.id.city_name1);
         temperature = (TextView)view.findViewById(R.id.city_temp1_value);
         forecastRain = view.findViewById(R.id.city_forecast1_text);
-        windSpeed = (TextView) view.findViewById(R.id.idToday_wind_value1);
-        humidity = (TextView)view.findViewById(R.id.idToday_humidity_value);
-        pressure = (TextView) view.findViewById(R.id.idToday_pressure_value1);
-        uvRisk = view.findViewById(R.id.idToday_uvRisk_value1);
-        chance_of_rain = view.findViewById(R.id.idToday_rain_value1);
+        windSpeed = (TextView) view.findViewById(R.id.wind_value1);
+        humidity = (TextView)view.findViewById(R.id.humidity_value1);
+        pressure = (TextView) view.findViewById(R.id.pressure_value1);
+        uvRisk = view.findViewById(R.id.uvRisk_value1);
         weatherIcon = view.findViewById(R.id.weather_icon1);
 
         cityName.setText(element.getCityName());

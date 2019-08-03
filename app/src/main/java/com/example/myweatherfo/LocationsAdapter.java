@@ -62,23 +62,38 @@ class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder>
      */
     @Override
     public void onBindViewHolder(LocationsAdapter.ViewHolder holder, int position) {
+
+//        Location currentLocationD = null;
+//
+//        //CHECK
+//        if (mLocationsData.size() == 0) {
+//            holder.bindTo(null);
+//        } else {
+//            currentLocationD = mLocationsData.get(position % mLocationsData.size());
+//            holder.bindTo(currentLocationD);
+//            Glide.with(mContext).load(currentLocationD.getImageResource()).into(holder.mLocationsImage);
+//        }
+        System.out.println("Index showwwwww" + position % mLocationsData.size());
+
         //Get current location
-        Location currentLocation = mLocationsData.get(position);
+        Location currentLocation = mLocationsData.get(position % mLocationsData.size());
+
         //Populate the textviews with data
         holder.bindTo(currentLocation);
-
         Glide.with(mContext).load(currentLocation.getImageResource()).into(holder.mLocationsImage);
+
+
     }
-
-
     /**
      * Required method for determining the size of the data set.
      * @return Size of the data set.
      */
     @Override
     public int getItemCount() {
-        return mLocationsData.size();
+        return Integer.MAX_VALUE;
     }
+
+
 
 
     /**
@@ -115,7 +130,7 @@ class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder>
         @Override
         public void onClick(View view) {
 
-            Location currentLocation = mLocationsData.get(getAdapterPosition());
+            Location currentLocation = mLocationsData.get(getAdapterPosition() % mLocationsData.size());
             Intent detailIntent = new Intent(mContext, DetailActivity.class);
             detailIntent.putExtra("title", currentLocation.getCityName());
 //            detailIntent.putExtra("image_resource", currentLocation.getImageResource());

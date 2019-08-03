@@ -31,7 +31,7 @@ public class Day2Fragment extends Fragment {
     private WeatherDataParserHandler handler;
     private String code;
 
-    private TextView cityName,temperature, forecastRain, windSpeed, humidity, pressure, uvRisk, chance_of_rain;
+    private TextView cityName,temperature, forecastRain, windSpeed, humidity, pressure, uvRisk;
     private ImageView weatherIcon;
 
     final static String urlAddress = "https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/";
@@ -64,11 +64,10 @@ public class Day2Fragment extends Fragment {
         cityName = (TextView) view.findViewById(R.id.city_name1d2);
         temperature = (TextView)view.findViewById(R.id.city_temp1_valued2);
         forecastRain = view.findViewById(R.id.city_forecast1_textd2);
-        windSpeed = (TextView) view.findViewById(R.id.idToday_wind_value1d2);
-        humidity = (TextView)view.findViewById(R.id.idToday_humidity_valued2);
-        pressure = (TextView) view.findViewById(R.id.idToday_pressure_value1d2);
-        uvRisk = view.findViewById(R.id.idToday_uvRisk_value1d2);
-        chance_of_rain = view.findViewById(R.id.idToday_rain_value1d2);
+        windSpeed = (TextView) view.findViewById(R.id.wind_value1d2);
+        humidity = (TextView)view.findViewById(R.id.humidity_valued2);
+        pressure = (TextView) view.findViewById(R.id.pressure_value1d2);
+        uvRisk = view.findViewById(R.id.uvRisk_value1d2);
         weatherIcon = (ImageView)view.findViewById(R.id.weather_icon1d2);
 
         forecastRain.setText(element.getForecast());
