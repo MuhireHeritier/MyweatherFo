@@ -202,15 +202,7 @@ public class WeatherDataParserHandler {
                                             cityWeatherElementsObj.setSunset(sunsetTime);
                                             cityWeatherElementsObj.setSunrise("--");
                                         }
-
-
-
                                     }
-
-
-
-
-
                                 }
 
                                 break;
@@ -225,9 +217,7 @@ public class WeatherDataParserHandler {
                             default:
                                 break;
 
-
                         }
-
                         /*else if (event == XmlPullParser.END_TAG && tagName.equalsIgnoreCase("item")){
                             insideItem = false;
                         }*/
