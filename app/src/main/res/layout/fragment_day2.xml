@@ -98,7 +98,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/wind_dird2"
+                        android:id="@+id/wind_dirTextd2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="WIND DIRECTION"
@@ -127,7 +127,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/wind_1d2"
+                        android:id="@+id/windSpeedText_1d2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="WIND"
@@ -136,7 +136,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/wind_value1d2"
+                        android:id="@+id/windSpeed_value1d2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""

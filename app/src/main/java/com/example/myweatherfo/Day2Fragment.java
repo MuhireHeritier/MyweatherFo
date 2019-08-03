@@ -31,7 +31,7 @@ public class Day2Fragment extends Fragment {
     private WeatherDataParserHandler handler;
     private String code;
 
-    private TextView cityName,temperature, forecastRain, windSpeed, humidity, pressure, uvRisk;
+    private TextView cityName,temperature, forecastRain, windSpeed, humidity, windDirection, visibility, sunrise,sunset, pressure, uvRisk;
     private ImageView weatherIcon;
 
     final static String urlAddress = "https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/";
@@ -64,7 +64,11 @@ public class Day2Fragment extends Fragment {
         cityName = (TextView) view.findViewById(R.id.city_name1d2);
         temperature = (TextView)view.findViewById(R.id.city_temp1_valued2);
         forecastRain = view.findViewById(R.id.city_forecast1_textd2);
-        windSpeed = (TextView) view.findViewById(R.id.wind_value1d2);
+        windSpeed = (TextView) view.findViewById(R.id.windSpeed_value1d2);
+        windDirection = view.findViewById(R.id.wind_dir_valued2);
+        visibility = view.findViewById(R.id.idToday_visibility_value1d2);
+        sunrise = view.findViewById(R.id.sunrise_value1d2);
+        sunset = view.findViewById(R.id.sunset_value1d2);
         humidity = (TextView)view.findViewById(R.id.humidity_valued2);
         pressure = (TextView) view.findViewById(R.id.pressure_value1d2);
         uvRisk = view.findViewById(R.id.uvRisk_value1d2);
@@ -74,6 +78,8 @@ public class Day2Fragment extends Fragment {
         cityName.setText(element.getCityName());
         temperature.setText(element.getTemperature());
         windSpeed.setText(element.getWindSpeed());
+        windDirection.setText(element.getWindDirection());
+        visibility.setText(element.getVisibility());
 
         return view;
     }

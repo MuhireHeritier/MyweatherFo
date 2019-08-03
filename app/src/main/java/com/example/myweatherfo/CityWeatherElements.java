@@ -16,15 +16,8 @@ public class CityWeatherElements {
     private String temperature;
     private String visibility;
     private String uvRisk;
+    private String windDirection;
 
-//    public CityWeatherElements(String cityName, String weatherImage, String date, String humidity, String pressure, String temperature) {
-//        this.cityName = cityName;
-//        this.weatherImage = weatherImage;
-//        this.date = date;
-//        this.humidity = humidity;
-//        this.pressure = pressure;
-//        this.temperature = temperature;
-//    }
 
     public String getCityName() {
         return cityName;
@@ -103,5 +96,13 @@ public class CityWeatherElements {
 
     public void setForecast(String forecast) {
         this.forecast = forecast;
+    }
+
+    public String getWindDirection() {
+        return windDirection;
+    }
+
+    public void setWindDirection(String windDirection) {
+        this.windDirection = windDirection;
     }
 }

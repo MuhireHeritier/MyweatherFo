@@ -31,7 +31,7 @@ public class Day1Fragment extends Fragment {
 
     HashMap <String, String> hp = new HashMap<>();
 
-    private TextView cityName,temperature, weatherIcon, forecastRain, windSpeed, humidity, pressure, uvRisk;
+    private TextView cityName,temperature, weatherIcon, forecastRain, windSpeed, windDirection, humidity, visibility, sunrise,sunset, pressure, uvRisk;
 
     private View view;
     private List data;
@@ -63,7 +63,12 @@ public class Day1Fragment extends Fragment {
         cityName = (TextView) view.findViewById(R.id.city_name1);
         temperature = (TextView)view.findViewById(R.id.city_temp1_value);
         forecastRain = view.findViewById(R.id.city_forecast1_text);
-        windSpeed = (TextView) view.findViewById(R.id.wind_value1);
+        windSpeed = (TextView) view.findViewById(R.id.windSpeed_value1);
+        windDirection = view.findViewById(R.id.wind_dir1_value);
+        visibility = view.findViewById(R.id.idToday_visibility_value1);
+
+        sunrise = view.findViewById(R.id.sunrise_value1);
+        sunset = view.findViewById(R.id.sunset_value1);
         humidity = (TextView)view.findViewById(R.id.humidity_value1);
         pressure = (TextView) view.findViewById(R.id.pressure_value1);
         uvRisk = view.findViewById(R.id.uvRisk_value1);
@@ -73,6 +78,8 @@ public class Day1Fragment extends Fragment {
         forecastRain.setText(element.getForecast());
         temperature.setText(element.getTemperature());
         windSpeed.setText(element.getWindSpeed());
+        windDirection.setText(element.getWindDirection());
+        visibility.setText(element.getVisibility());
 
         return view;
     }

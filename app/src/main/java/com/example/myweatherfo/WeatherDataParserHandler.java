@@ -143,9 +143,13 @@ public class WeatherDataParserHandler  {
                                     maxTemp = descriptionElts[0].split(" ", 4)[2];
                                     System.out.println("Maxium "+ maxTemp);
                                     cityWeatherElementsObj.setTemperature(maxTemp);
+                                    String windDir = descriptionElts[2].split(":")[1];
+                                    cityWeatherElementsObj.setWindDirection(windDir);
                                     String wind = descriptionElts[3].split(":")[1];
                                     Log.d(TAG, "parseXML: "+ wind);
                                     cityWeatherElementsObj.setWindSpeed(wind);
+                                    String visibility = descriptionElts[4].split(":")[1];
+                                    cityWeatherElementsObj.setVisibility(visibility);
                                 }
 
                                 break;
