@@ -7,7 +7,6 @@ package com.example.myweatherfo;
 public class CityWeatherElements {
     private String cityName;
     private String weatherImage;
-    private String date;
     private String windSpeed;
 
     private String forecast;
@@ -19,7 +18,7 @@ public class CityWeatherElements {
     private String windDirection;
     private String sunset;
     private String sunrise;
-
+    private String todayDate;
 
     public String getCityName() {
         return cityName;
@@ -35,14 +34,6 @@ public class CityWeatherElements {
 
     public void setWeatherImage(String weatherImage) {
         this.weatherImage = weatherImage;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
     }
 
     public String getHumidity() {
@@ -122,5 +113,13 @@ public class CityWeatherElements {
 
     public void setSunrise(String sunrise) {
         this.sunrise = sunrise;
+    }
+
+    public String getTodayDate() {
+        return todayDate;
+    }
+
+    public void setTodayDate(String todayDate) {
+        this.todayDate = todayDate;
     }
 }

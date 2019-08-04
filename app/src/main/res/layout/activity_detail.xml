@@ -13,7 +13,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/cornflower_blue"
         android:theme="?attr/actionBarTheme"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:theme="@style/ThemeOverlay.AppCompat.Dark" />
@@ -23,7 +23,7 @@
         android:id="@+id/cityTitleDetail"
         android:text="@string/title_placeholder"
         android:padding="8dp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/cornflower_blue"
         android:theme="@style/ThemeOverlay.AppCompat.Dark"
         style="@style/TextAppearance.AppCompat.Headline"/>
 
@@ -31,7 +31,7 @@
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/cornflower_blue"
         app:tabSelectedTextColor="@android:color/white"
         app:tabTextColor="@android:color/black">
 

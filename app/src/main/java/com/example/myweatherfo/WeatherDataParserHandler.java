@@ -133,8 +133,6 @@ public class WeatherDataParserHandler {
                                 break;
                             case "url":
                                 System.out.println(text);
-                                String imURL = text;
-
                                 break;
 
                             case "description":
@@ -207,6 +205,12 @@ public class WeatherDataParserHandler {
 
                                 break;
                             case "pubDate":
+                                if (insideItem) {
+                                    String [] tDate = text.split(" ",5);
+                                    String td = tDate[0]+" " + tDate[1] +" "+tDate[2]+" " + tDate[3];
+                                    Log.d(TAG, "parseXML: ------------------------" + td);
+                                    cityWeatherElementsObj.setTodayDate(td);
+                                }
                                 break;
                             case "item":
                                 cityWeatherElementsObj.setCityName(locTitle[1]);
