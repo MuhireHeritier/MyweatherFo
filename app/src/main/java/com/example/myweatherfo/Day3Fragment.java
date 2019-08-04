@@ -1,3 +1,7 @@
+/**
+ * created by Heritier Muhire
+ * Student Id: S1719021
+ */
 package com.example.myweatherfo;
 
 
@@ -15,10 +19,6 @@ import android.widget.Toast;
 
 import java.util.List;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Day3Fragment extends Fragment {
 
     private TextView cityName,temperature, forecastRain, windSpeed,windDirection, visibility, humidity,sunset, sunrise, pressure, uvRisk;

@@ -1,5 +1,7 @@
-// Author: Heritier Muhire
-// Student Id: S1719021
+/**
+ * created by Heritier Muhire
+ * Student Id: S1719021
+ */
 package com.example.myweatherfo;
 
 public class Location {
