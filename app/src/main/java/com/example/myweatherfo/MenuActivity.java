@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
+import com.example.myweatherfo.controller.ViewPagerAdapter;
+
 import java.util.HashMap;
 
 public class MenuActivity extends AppCompatActivity {

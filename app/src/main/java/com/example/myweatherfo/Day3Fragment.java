@@ -17,6 +17,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myweatherfo.controller.WeatherDataParserHandler;
+import com.example.myweatherfo.model.CityWeatherElements;
+
 import java.util.List;
 
 public class Day3Fragment extends Fragment {

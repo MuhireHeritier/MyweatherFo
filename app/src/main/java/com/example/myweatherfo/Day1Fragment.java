@@ -16,6 +16,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.myweatherfo.controller.WeatherDataParserHandler;
+import com.example.myweatherfo.model.CityWeatherElements;
+
 import java.util.HashMap;
 import java.util.List;
 

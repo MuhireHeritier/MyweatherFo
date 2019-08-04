@@ -2,10 +2,14 @@
  * created by Heritier Muhire
  * Student Id: S1719021
  */
-package com.example.myweatherfo;
+package com.example.myweatherfo.controller;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+
+import com.example.myweatherfo.MenuActivity;
+import com.example.myweatherfo.R;
+import com.example.myweatherfo.model.CityWeatherElements;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

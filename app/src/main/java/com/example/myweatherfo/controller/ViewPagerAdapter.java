@@ -2,7 +2,7 @@
  * created by Heritier Muhire
  * Student Id: S1719021
  */
-package com.example.myweatherfo;
+package com.example.myweatherfo.controller;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

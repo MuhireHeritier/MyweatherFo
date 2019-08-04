@@ -2,7 +2,7 @@
  * created by Heritier Muhire
  * Student Id: S1719021
  */
-package com.example.myweatherfo;
+package com.example.myweatherfo.model;
 
 public class Location {
     //Member variables representing the cityName and information about the sport
