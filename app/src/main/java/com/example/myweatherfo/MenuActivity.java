@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 
-public class DetailActivity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity {
 
 
     Toolbar toolbar;
@@ -30,7 +30,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_menu);
 
         HashMap<String, String> hp = new HashMap<>();
 
@@ -78,17 +78,17 @@ public class DetailActivity extends AppCompatActivity {
 //
 //                if (tab.getPosition() == 1) {
 //                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//                        getWindow().setStatusBarColor(ContextCompat.getColor(DetailActivity.this,
+//                        getWindow().setStatusBarColor(ContextCompat.getColor(MenuActivity.this,
 //                                R.color.colorAccent));
 //                    }
 //                } else if (tab.getPosition() == 2) {
 //                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//                        getWindow().setStatusBarColor(ContextCompat.getColor(DetailActivity.this,
+//                        getWindow().setStatusBarColor(ContextCompat.getColor(MenuActivity.this,
 //                                android.R.color.darker_gray));
 //                    }
 //                } else {
 //                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//                        getWindow().setStatusBarColor(ContextCompat.getColor(DetailActivity.this,
+//                        getWindow().setStatusBarColor(ContextCompat.getColor(MenuActivity.this,
 //                                R.color.colorPrimaryDark));
 //                    }
 //                }

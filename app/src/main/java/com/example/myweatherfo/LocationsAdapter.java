@@ -7,21 +7,16 @@ package com.example.myweatherfo;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
-import java.util.List;
-
 
 
 /***
@@ -115,7 +110,7 @@ class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder>
         public void onClick(View view) {
 
             Location currentLocation = mLocationsData.get(getAdapterPosition() % mLocationsData.size());
-            Intent detailIntent = new Intent(mContext, DetailActivity.class);
+            Intent detailIntent = new Intent(mContext, MenuActivity.class);
             detailIntent.putExtra("title", currentLocation.getCityName());
 
             mContext.startActivity(detailIntent);

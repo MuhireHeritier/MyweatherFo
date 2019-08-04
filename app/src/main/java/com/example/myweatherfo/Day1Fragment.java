@@ -26,7 +26,7 @@ import java.util.List;
 public class Day1Fragment extends Fragment {
 
     final static String urlAddress = "https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/";
-    DetailActivity detailActivity = new DetailActivity();
+    MenuActivity detailActivity = new MenuActivity();
     String code;
 
     HashMap <String, String> hp = new HashMap<>();
@@ -48,7 +48,7 @@ public class Day1Fragment extends Fragment {
                              Bundle savedInstanceState) {
         setHasOptionsMenu(true);
 
-        DetailActivity activity = (DetailActivity) getActivity();
+        MenuActivity activity = (MenuActivity) getActivity();
         code = activity.locationCode;
 
         System.out.println(code);

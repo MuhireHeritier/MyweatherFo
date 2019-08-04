@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailActivity"
+    tools:context=".MenuActivity"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
@@ -32,26 +32,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/cornflower_blue"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/black"
         app:tabSelectedTextColor="@android:color/white"
         app:tabTextColor="@android:color/black">
 
-    <android.support.design.widget.TabItem
-        android:id="@+id/tabDay1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Day1" />
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabDay1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day1" />
 
-    <android.support.design.widget.TabItem
-        android:id="@+id/tabDay2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Day2" />
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabDay2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day2" />
 
-    <android.support.design.widget.TabItem
-        android:id="@+id/tabDay3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Day3" />
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabDay3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day3" />
     </android.support.design.widget.TabLayout>
 
     <android.support.v4.view.ViewPager

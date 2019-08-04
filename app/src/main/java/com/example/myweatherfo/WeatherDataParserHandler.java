@@ -6,9 +6,6 @@ package com.example.myweatherfo;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
-import android.util.Log;
-import android.widget.ImageView;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -21,12 +18,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.support.constraint.Constraints.TAG;
-
 public class WeatherDataParserHandler {
 
     private ProgressDialog pd;
-    private DetailActivity activity;
+    private MenuActivity activity;
     private Context context;
     private InputStream inputStream;
     private Exception exception = null;

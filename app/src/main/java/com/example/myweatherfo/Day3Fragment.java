@@ -46,7 +46,7 @@ public class Day3Fragment extends Fragment {
 
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_day3, container, false);
-        DetailActivity activity = (DetailActivity) getActivity();
+        MenuActivity activity = (MenuActivity) getActivity();
         code = activity.locationCode;
 
         System.out.println(code);

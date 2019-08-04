@@ -48,7 +48,7 @@ public class Day2Fragment extends Fragment {
                              Bundle savedInstanceState) {
         setHasOptionsMenu(true);
 
-        DetailActivity activity = (DetailActivity) getActivity();
+        MenuActivity activity = (MenuActivity) getActivity();
         code = activity.locationCode;
 
         System.out.println(code);
