@@ -6,7 +6,9 @@ package com.example.myweatherfo;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.widget.ImageView;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -129,12 +131,38 @@ public class WeatherDataParserHandler {
                                     String title = text;
                                     String[] titleText = title.split(",");
                                     cityWeatherElementsObj.setForecast(titleText[0]);
+
+                                    // ICONS fetched from the title using IFs statement
+                                    if (text.contains("Light Cloud") || (text.contains("Clear Sky"))|| (text.contains("Partly Cloudy"))){
+                                        int imageUri = R.drawable.light_clear_sky ;
+
+                                        cityWeatherElementsObj.setWeatherIcon(imageUri);
+
+                                    }
+                                    else if (text.contains("Sunny Intervals") || (text.contains("Sunny"))){
+                                        int sunnyImage = R.drawable.sunny ;
+
+                                        cityWeatherElementsObj.setWeatherIcon(sunnyImage);
+
+                                    }
+                                    else if (text.contains("Thundery Showers")){
+                                        int tS = R.drawable.thundery;
+                                        cityWeatherElementsObj.setWeatherIcon(tS);
+                                        System.out.println("****************** use N/A, and Copy Heritier | S1719021********");
+
+                                    }
+                                    else if (text.contains("Light Rain Showers") || (text.contains("Light Rain"))){
+                                        int lightRain = R.drawable.light_rain;
+                                        cityWeatherElementsObj.setWeatherIcon(lightRain);
+
+                                    }
+                                    else {
+                                        int dWeather = R.drawable.defaultweather;
+                                        cityWeatherElementsObj.setWeatherIcon(dWeather);
+                                    }
+
                                 }
                                 break;
-                            case "url":
-                                System.out.println(text);
-                                break;
-
                             case "description":
                                 if (insideItem) {
                                     String description = text;

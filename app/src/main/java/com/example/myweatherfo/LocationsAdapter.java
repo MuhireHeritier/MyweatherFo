@@ -62,19 +62,6 @@ class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder>
      */
     @Override
     public void onBindViewHolder(LocationsAdapter.ViewHolder holder, int position) {
-
-//        Location currentLocationD = null;
-//
-//        //CHECK
-//        if (mLocationsData.size() == 0) {
-//            holder.bindTo(null);
-//        } else {
-//            currentLocationD = mLocationsData.get(position % mLocationsData.size());
-//            holder.bindTo(currentLocationD);
-//            Glide.with(mContext).load(currentLocationD.getImageResource()).into(holder.mLocationsImage);
-//        }
-        System.out.println("Index showwwwww" + position % mLocationsData.size());
-
         //Get current location
         Location currentLocation = mLocationsData.get(position % mLocationsData.size());
 
@@ -92,9 +79,6 @@ class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder>
     public int getItemCount() {
         return Integer.MAX_VALUE;
     }
-
-
-
 
     /**
      * ViewHolder class that represents each row of data in the RecyclerView
@@ -133,7 +117,6 @@ class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder>
             Location currentLocation = mLocationsData.get(getAdapterPosition() % mLocationsData.size());
             Intent detailIntent = new Intent(mContext, DetailActivity.class);
             detailIntent.putExtra("title", currentLocation.getCityName());
-//            detailIntent.putExtra("image_resource", currentLocation.getImageResource());
 
             mContext.startActivity(detailIntent);
 

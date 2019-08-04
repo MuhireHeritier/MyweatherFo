@@ -37,6 +37,8 @@ public class Day1Fragment extends Fragment {
     private CityWeatherElements element;
     private WeatherDataParserHandler handler;
 
+    private ImageView weatherIcon;
+
     public Day1Fragment() {
         // Required empty public constructor
     }
@@ -73,6 +75,8 @@ public class Day1Fragment extends Fragment {
         uvRisk = view.findViewById(R.id.uvRisk_value1);
         pubDate = view.findViewById(R.id.day_date1);
 
+        weatherIcon = view.findViewById(R.id.weather_icon1);
+
         cityName.setText(element.getCityName());
         forecastRain.setText(element.getForecast());
         temperature.setText(element.getTemperature());
@@ -86,6 +90,8 @@ public class Day1Fragment extends Fragment {
         sunrise.setText(element.getSunrise());
         sunset.setText(element.getSunset());
         pubDate.setText(element.getTodayDate());
+
+        weatherIcon.setImageResource(element.getWeatherIcon());
 
         return view;
     }

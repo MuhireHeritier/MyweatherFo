@@ -49,20 +49,19 @@
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <!--<TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:id="@+id/weather_icon1"
+                        android:layout_below="@id/day_date1"/>-->
+
+
+                    <ImageView
                         android:id="@+id/weather_icon1"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:layout_below="@id/day_date1"
-                        android:text=""/>
-
-                    <!--<ImageView
-                        android:id="@+id/weather_icon1"
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:layout_below="@id/day_time1"
-                        android:padding="10dp"
-                        android:src="" />-->
+                        android:padding="10dp" />
 
                     <TextView
                         android:id="@+id/city_temp1_value"
@@ -156,11 +155,11 @@
             <View
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="0.5dp"
                 android:layout_below="@id/linearHoriz1"
-                android:background="#000"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"/>
+                android:background="#000" />
 
             <LinearLayout
                 android:id="@+id/linearHoriz2"
@@ -228,11 +227,11 @@
             <View
                 android:id="@+id/divider2"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="0.5dp"
                 android:layout_below="@id/linearHoriz2"
-                android:background="#000"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"/>
+                android:background="#000" />
 
             <LinearLayout
                 android:id="@+id/linearHoriz3"
@@ -300,11 +299,11 @@
             <View
                 android:id="@+id/divider3"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="0.5dp"
                 android:layout_below="@id/linearHoriz3"
-                android:background="#000"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"/>
+                android:background="#000" />
 
             <LinearLayout
                 android:id="@+id/linearHoriz4"
@@ -372,11 +371,11 @@
             <View
                 android:id="@+id/divider4"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="0.5dp"
                 android:layout_below="@id/linearHoriz4"
-                android:background="#000"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"/>
+                android:background="#000" />
 
 
         </RelativeLayout>
