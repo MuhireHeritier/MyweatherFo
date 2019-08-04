@@ -31,7 +31,7 @@ public class Day1Fragment extends Fragment {
 
     HashMap <String, String> hp = new HashMap<>();
 
-    private TextView cityName,temperature, forecastRain, windSpeed, windDirection, humidity, visibility, sunrise,sunset, pressure, uvRisk, pubDate;
+    private TextView cityName,temperature,minTemp,maxTemp, forecastRain, windSpeed, windDirection, humidity, visibility, sunrise,sunset, pressure, uvRisk, pubDate;
     private View view;
     private List data;
     private CityWeatherElements element;
@@ -76,6 +76,8 @@ public class Day1Fragment extends Fragment {
         pubDate = view.findViewById(R.id.day_date1);
 
         weatherIcon = view.findViewById(R.id.weather_icon1);
+        minTemp = view.findViewById(R.id.min_temp_valued1);
+        maxTemp = view.findViewById(R.id.max_temp_valued1);
 
         cityName.setText(element.getCityName());
         forecastRain.setText(element.getForecast());
@@ -92,6 +94,8 @@ public class Day1Fragment extends Fragment {
         pubDate.setText(element.getTodayDate());
 
         weatherIcon.setImageResource(element.getWeatherIcon());
+        minTemp.setText(element.getMinTemp());
+        maxTemp.setText(element.getMaxTemp());
 
         return view;
     }

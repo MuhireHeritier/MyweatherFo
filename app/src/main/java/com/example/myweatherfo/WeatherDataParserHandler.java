@@ -161,11 +161,18 @@ public class WeatherDataParserHandler {
                             case "description":
                                 if (insideItem) {
                                     String description = text;
+                                    String minTemp, maximumTemp;
+
                                     System.out.println(text);
                                     String[] descriptionElts = description.split(",");
                                     if (description.contains("Maximum Temperature:")) {
                                         maxTemp = descriptionElts[0].split(" ", 4)[2];
+                                        minTemp = descriptionElts[1].split(" ", 5)[3];
+                                        maximumTemp = descriptionElts[0].split(" ", 4)[2];
+
                                         cityWeatherElementsObj.setTemperature(maxTemp);
+                                        cityWeatherElementsObj.setMaxTemp(maximumTemp);
+                                        cityWeatherElementsObj.setMinTemp(minTemp);
                                         String windDir = descriptionElts[2].split(":")[1];
                                         cityWeatherElementsObj.setWindDirection(windDir);
                                         String wind = descriptionElts[3].split(":")[1];
@@ -192,6 +199,8 @@ public class WeatherDataParserHandler {
                                     else  {
                                         maxTemp = descriptionElts[0].split(" ", 4)[2];
                                         cityWeatherElementsObj.setTemperature(maxTemp);
+                                        cityWeatherElementsObj.setMinTemp(maxTemp);
+                                        cityWeatherElementsObj.setMaxTemp("-N/A-");
                                         String windDir = descriptionElts[1].split(":")[1];
                                         cityWeatherElementsObj.setWindDirection(windDir);
                                         String windSpeed = descriptionElts[2].split(":")[1];

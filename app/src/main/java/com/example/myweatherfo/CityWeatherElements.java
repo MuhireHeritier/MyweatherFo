@@ -11,7 +11,7 @@ public class CityWeatherElements {
     private String forecast;
     private String humidity;
     private String pressure;
-    private String temperature;
+    private String temperature, minTemp, maxTemp;
     private String visibility;
     private String uvRisk;
     private String windDirection;
@@ -123,5 +123,21 @@ public class CityWeatherElements {
 
     public void setWeatherIcon(int weatherIcon) {
         this.weatherIcon = weatherIcon;
+    }
+
+    public String getMinTemp() {
+        return minTemp;
+    }
+
+    public void setMinTemp(String minTemp) {
+        this.minTemp = minTemp;
+    }
+
+    public String getMaxTemp() {
+        return maxTemp;
+    }
+
+    public void setMaxTemp(String maxTemp) {
+        this.maxTemp = maxTemp;
     }
 }

@@ -21,7 +21,7 @@ import java.util.List;
 
 public class Day3Fragment extends Fragment {
 
-    private TextView cityName,temperature, forecastRain, windSpeed,windDirection, visibility, humidity,sunset, sunrise, pressure, uvRisk;
+    private TextView cityName,temperature, minTemp, maxTemp, forecastRain, windSpeed,windDirection, visibility, humidity,sunset, sunrise, pressure, uvRisk;
     private ImageView weatherIcon;
 
     final static String urlAddress = "https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/";
@@ -72,6 +72,8 @@ public class Day3Fragment extends Fragment {
         uvRisk = view.findViewById(R.id.idToday_uvRisk_value1d3);
 
         weatherIcon = view.findViewById(R.id.weather_icon1d3);
+        minTemp = view.findViewById(R.id.min_temp_valued3);
+        maxTemp = view.findViewById(R.id.max_temp_valued3);
 
         cityName.setText(element.getCityName());
         forecastRain.setText(element.getForecast());
@@ -87,6 +89,9 @@ public class Day3Fragment extends Fragment {
         sunset.setText(element.getSunset());
 
         weatherIcon.setImageResource(element.getWeatherIcon());
+        minTemp.setText(element.getMinTemp());
+        maxTemp.setText(element.getMaxTemp());
+
 
         return view;
     }
