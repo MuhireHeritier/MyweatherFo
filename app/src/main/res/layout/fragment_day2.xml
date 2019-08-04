@@ -54,8 +54,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:layout_below="@id/day_time1d2"
-                        android:padding="10dp"
-                        android:src="@drawable/sunny" />
+                        android:padding="10dp"/>
 
                     <TextView
                         android:id="@+id/city_temp1_valued2"
@@ -372,6 +371,19 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:background="#000" />
+
+            <TextView
+                android:id="@+id/footerd2"
+                android:layout_below="@+id/divider4_d2"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="&#169; Heritier | S1719021"
+                android:background="@color/cornflower_blue"
+                android:gravity="center"
+                android:layout_marginTop="3dp"
+                android:textColor="#fff"
+                android:textSize="18sp" />
 
 
         </RelativeLayout>

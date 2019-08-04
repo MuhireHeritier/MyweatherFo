@@ -71,6 +71,8 @@ public class Day3Fragment extends Fragment {
         pressure = (TextView) view.findViewById(R.id.pressure_value1d3);
         uvRisk = view.findViewById(R.id.idToday_uvRisk_value1d3);
 
+        weatherIcon = view.findViewById(R.id.weather_icon1d3);
+
         cityName.setText(element.getCityName());
         forecastRain.setText(element.getForecast());
         temperature.setText(element.getTemperature());
@@ -83,6 +85,8 @@ public class Day3Fragment extends Fragment {
         uvRisk.setText(element.getUvRisk());
         sunrise.setText(element.getSunrise());
         sunset.setText(element.getSunset());
+
+        weatherIcon.setImageResource(element.getWeatherIcon());
 
         return view;
     }

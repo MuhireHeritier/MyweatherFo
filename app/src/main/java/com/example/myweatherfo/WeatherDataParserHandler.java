@@ -169,14 +169,11 @@ public class WeatherDataParserHandler {
                                     System.out.println(text);
                                     String[] descriptionElts = description.split(",");
                                     if (description.contains("Maximum Temperature:")) {
-                                        System.out.println("------------------------------------ "+ descriptionElts);
                                         maxTemp = descriptionElts[0].split(" ", 4)[2];
-                                        System.out.println("Maxium " + maxTemp);
                                         cityWeatherElementsObj.setTemperature(maxTemp);
                                         String windDir = descriptionElts[2].split(":")[1];
                                         cityWeatherElementsObj.setWindDirection(windDir);
                                         String wind = descriptionElts[3].split(":")[1];
-                                        Log.d(TAG, "parseXML: " + wind);
                                         cityWeatherElementsObj.setWindSpeed(wind);
                                         String visibility = descriptionElts[4].split(":")[1];
                                         cityWeatherElementsObj.setVisibility(visibility);
@@ -219,14 +216,14 @@ public class WeatherDataParserHandler {
                                         if (description.contains("sunrise")){
                                             String sunriseTime = descriptionElts[8].split(":", 2)[1];
                                             cityWeatherElementsObj.setSunrise(sunriseTime);
-                                            cityWeatherElementsObj.setSunset("--");
+                                            cityWeatherElementsObj.setSunset("-N/A-");
 
 
                                         }
                                         else{
                                             String sunsetTime = descriptionElts[8].split(":", 2)[1];
                                             cityWeatherElementsObj.setSunset(sunsetTime);
-                                            cityWeatherElementsObj.setSunrise("--");
+                                            cityWeatherElementsObj.setSunrise("-N/A-");
                                         }
                                     }
                                 }
@@ -236,7 +233,6 @@ public class WeatherDataParserHandler {
                                 if (insideItem) {
                                     String [] tDate = text.split(" ",5);
                                     String td = tDate[0]+" " + tDate[1] +" "+tDate[2]+" " + tDate[3];
-                                    Log.d(TAG, "parseXML: ------------------------" + td);
                                     cityWeatherElementsObj.setTodayDate(td);
                                 }
                                 break;
@@ -250,9 +246,6 @@ public class WeatherDataParserHandler {
                                 break;
 
                         }
-                        /*else if (event == XmlPullParser.END_TAG && tagName.equalsIgnoreCase("item")){
-                            insideItem = false;
-                        }*/
 
                 }
 
