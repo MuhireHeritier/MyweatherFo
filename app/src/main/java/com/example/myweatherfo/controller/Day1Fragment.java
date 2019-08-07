@@ -2,7 +2,7 @@
  * created by Heritier Muhire
  * Student Id: S1719021
  */
-package com.example.myweatherfo;
+package com.example.myweatherfo.controller;
 
 
 import android.os.Bundle;
@@ -17,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myweatherfo.R;
+import com.example.myweatherfo.controller.MenuActivity;
 import com.example.myweatherfo.controller.WeatherDataParserHandler;
 import com.example.myweatherfo.model.CityWeatherElements;
 

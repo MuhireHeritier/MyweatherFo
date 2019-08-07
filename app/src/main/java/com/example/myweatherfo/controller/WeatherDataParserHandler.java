@@ -7,7 +7,6 @@ package com.example.myweatherfo.controller;
 import android.app.ProgressDialog;
 import android.content.Context;
 
-import com.example.myweatherfo.MenuActivity;
 import com.example.myweatherfo.R;
 import com.example.myweatherfo.model.CityWeatherElements;
 

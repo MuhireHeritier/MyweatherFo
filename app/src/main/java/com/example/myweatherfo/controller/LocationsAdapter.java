@@ -3,7 +3,7 @@
  * Student Id: S1719021
  *
  */
-package com.example.myweatherfo;
+package com.example.myweatherfo.controller;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.myweatherfo.R;
 import com.example.myweatherfo.model.Location;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 /***
  * The adapter class for the RecyclerView, contains the sports data
  */
-class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder>  {
+public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder>  {
 
     //Member variables
     private ArrayList<Location> mLocationsData;
@@ -34,7 +35,7 @@ class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder>
      * @param locationsData ArrayList containing the sports data
      * @param context Context of the application
      */
-    LocationsAdapter(Context context, ArrayList<Location> locationsData) {
+    public LocationsAdapter(Context context, ArrayList<Location> locationsData) {
         this.mLocationsData = locationsData;
         this.mContext = context;
     }
@@ -83,13 +84,9 @@ class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder>
 
         //Member Variables for the TextViews
         private TextView mCityNameText;
-        //private TextView mInfoText;
         private ImageView mLocationsImage;
 
-        /**
-         * Constructor for the ViewHolder, used in onCreateViewHolder().
-         * @param itemView The rootview of the list_item.xml layout file
-         */
+
         ViewHolder(View itemView) {
             super(itemView);
 

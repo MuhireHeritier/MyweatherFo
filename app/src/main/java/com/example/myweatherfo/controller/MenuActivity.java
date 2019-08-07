@@ -2,7 +2,7 @@
  * created by Heritier Muhire
  * Student Id: S1719021
  */
-package com.example.myweatherfo;
+package com.example.myweatherfo.controller;
 
 import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
-import com.example.myweatherfo.controller.ViewPagerAdapter;
+import com.example.myweatherfo.R;
 
 import java.util.HashMap;
 
@@ -27,7 +27,7 @@ public class MenuActivity extends AppCompatActivity {
     TabItem tabDay3;
     ViewPager viewPager;
     String location;
-    String locationCode;
+    public String locationCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

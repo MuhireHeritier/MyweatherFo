@@ -2,7 +2,7 @@
  * Names : Heritier Muhire
  * Student Id: S1719021
  */
-package com.example.myweatherfo;
+package com.example.myweatherfo.controller;
 
 import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.myweatherfo.R;
 import com.example.myweatherfo.model.Location;
 
 import java.util.ArrayList;
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         TypedArray locationsImageResources =
                 getResources().obtainTypedArray(R.array.locations_images);
 
-        //Clear the existing data (to avoid duplication)
+        //Clear the existing data
         mLocationsData.clear();
 
         //Create the ArrayList of Locations objects with the cityNames about each location
